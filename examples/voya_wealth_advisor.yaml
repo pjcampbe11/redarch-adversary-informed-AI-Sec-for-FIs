@@ -1,0 +1,36 @@
+# Worked example: a wealth/retirement "Advisor Copilot" of the kind a firm like
+# Voya would build on Azure OpenAI + Databricks over participant data.
+#
+# This spec is intentionally partly-insecure so the controls policy flags gaps
+# (e.g. money-movement tool with no human-in-the-loop). Fix the fields and
+# re-run `redarch controls` to watch it go green.
+system: "Voya Advisor Copilot (worked example)"
+
+components:
+  - name: advisor-copilot
+    type: agent                 # llm_app | rag | agent | model_endpoint | data_pipeline | training
+    data: [pii, financial]
+    tools: [get_balance, transfer_funds]
+    internet_exposed: true
+    untrusted_input: true
+    # --- control attributes read by policies/finserv-genai.yaml ---
+    human_in_the_loop: false    # ❌ money movement with no approval gate
+    secrets_in_prompt: true     # ❌ token embedded in system prompt
+    controls: [output_dlp]      # row_level_entitlements missing
+
+  - name: participant-index
+    type: rag
+    data: [pii, financial]
+    internet_exposed: false
+    controls: []                # ❌ no row_level_entitlements on a PII store
+
+  - name: azure-openai-gpt4o
+    type: model_endpoint
+    data: []
+    internet_exposed: true
+    controls: [rate_limiting]
+
+  - name: databricks-feature-pipeline
+    type: data_pipeline
+    data: [pii, financial]
+    controls: [dataset_provenance]

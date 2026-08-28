@@ -1,0 +1,47 @@
+# Controls-as-code policy for a financial-services GenAI system.
+# Maps to OWASP LLM Top 10, NIST AI RMF (Manage), and the crown-jewel risk for a
+# wealth/retirement copilot: money movement and participant PII.
+policy: finserv-genai-baseline
+
+controls:
+  - id: CTRL-HITL-001
+    title: "Human approval + step-up auth for money-movement tools"
+    severity: critical
+    owasp: [LLM06]
+    applies_to: {has_tool: transfer_funds}
+    assert: {field: human_in_the_loop, equals: true, default: false}
+
+  - id: CTRL-ENT-001
+    title: "Row-level entitlements at retrieval for PII stores"
+    severity: critical
+    owasp: [LLM02]
+    applies_to: {type: rag, has_data: pii}
+    assert: {control_present: row_level_entitlements}
+
+  - id: CTRL-SECRET-001
+    title: "No secrets embedded in system prompts"
+    severity: high
+    owasp: [LLM07]
+    applies_to: {any: true}
+    assert: {forbid_field: secrets_in_prompt}
+
+  - id: CTRL-DLP-001
+    title: "Output DLP on components handling PII/financial data"
+    severity: high
+    owasp: [LLM02]
+    applies_to: {has_data: pii}
+    assert: {control_present: output_dlp}
+
+  - id: CTRL-RATE-001
+    title: "Rate limiting on internet-exposed model endpoints"
+    severity: medium
+    owasp: [LLM10]
+    applies_to: {type: model_endpoint, internet_exposed: true}
+    assert: {control_present: rate_limiting}
+
+  - id: CTRL-PROV-001
+    title: "Dataset provenance on training/feature pipelines"
+    severity: high
+    owasp: [LLM04]
+    applies_to: {type: data_pipeline}
+    assert: {control_present: dataset_provenance}

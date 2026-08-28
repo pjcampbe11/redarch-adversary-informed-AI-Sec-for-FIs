@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "redarch"
+version = "0.1.0"
+description = "Adversary-informed AI security architecture framework for financial services"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Patrick Campbell"}]
+keywords = ["ai-security", "llm", "red-team", "owasp-llm", "mitre-atlas", "threat-modeling"]
+dependencies = ["PyYAML>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+# The azure_advisor reference implementation only needs these to run against a
+# LIVE Azure tenant. Its `--demo` and its tests use in-memory stubs and need none.
+azure = [
+  "openai>=1.40",
+  "azure-identity>=1.17",
+  "azure-search-documents>=11.5",
+  "azure-ai-contentsafety>=1.0",
+  "msal>=1.28",
+]
+
+[project.scripts]
+redarch = "redarch.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["redarch*", "azure_advisor*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,9 @@
+# Copy to azure_openai.yaml and set REDARCH_API_KEY in your environment.
+# Points the same probe suite at a real Azure OpenAI deployment.
+type: azure_openai
+base_url: "https://<your-resource>.openai.azure.com/openai/deployments/<deployment>/chat/completions?api-version=2024-10-21"
+model: "gpt-4o"
+api_key_env: "REDARCH_API_KEY"
+auth_header: "api-key"      # Azure uses 'api-key', not 'Authorization'
+auth_prefix: ""
+temperature: 0.0

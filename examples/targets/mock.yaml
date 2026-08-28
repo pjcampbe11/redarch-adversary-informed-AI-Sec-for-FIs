@@ -1,0 +1,4 @@
+# Default offline target: the deliberately-vulnerable advisor copilot.
+# No keys, no network. Flip guardrails to true to simulate controls in place.
+type: mock
+guardrails: false
