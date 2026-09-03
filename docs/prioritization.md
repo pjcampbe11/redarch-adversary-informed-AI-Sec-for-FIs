@@ -108,7 +108,7 @@ Still worth a control on internet-exposed endpoints. `CTRL-RATE-001`.
 
 ---
 
-## The 90-day offensive plan (how you'd actually run it at Voya)
+## The 90-day offensive plan (how you'd actually run it @ a FI)
 
 1. **Weeks 1–2 — Map.** Inventory every GenAI/agent system; write a spec per
    system; generate threat models (`redarch threatmodel`). Tier them
