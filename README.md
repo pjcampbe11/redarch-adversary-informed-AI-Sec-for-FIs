@@ -95,7 +95,7 @@ and setting `REDARCH_API_KEY`. The same probe suite runs unchanged.
 
 ---
 
-## How the modules map to the AI Security Architect duties
+## How the modules map to AI Security Architect duties
 
 | JD duty area | RedArch module | Document |
 |---|---|---|
