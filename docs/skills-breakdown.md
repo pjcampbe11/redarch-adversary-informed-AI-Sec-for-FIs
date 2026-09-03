@@ -1,4 +1,4 @@
-# Skills Breakdown — Voya AI Security Architect (JR0032384)
+# Skills Breakdown — AI Security Architect 
 
 Every skill, qualification, and differentiator called out in the posting, with a
 plain description of what it means *for this role* and, where relevant, how the
@@ -124,24 +124,3 @@ security as the specialty. Descriptions below.
   Azure-heavy estate — they want judgement, not evangelism.
 - **Intellectual curiosity & integrity; motivated by long-term outcomes.**
   Culture-fit signals.
-
-**How to read this list as a candidate:** the AI-specific "must-haves" are
-concentrated in the duty areas (threat modeling, secure design, guardrails,
-agentic AI). The differentiators are mostly enterprise-architect and
-leadership/influence competencies. A strong application pairs deep offensive
-AI-security proof (this framework, MITRE ATLAS/OWASP fluency, real red-team
-findings) with evidence of business-level influence and program ownership.
-
----
-
-## Voya's five "Critical Skills" (culture layer)
-
-Voya publishes five critical skills it hires against. Map your evidence to each:
-
-- **Customer Focused** — frame AI security around protecting participants and
-  their trust, not just infrastructure.
-- **Critical Thinking** — structured analysis to a well-reasoned solution
-  (threat modeling is this, made explicit).
-- **Team Mentality** — partner across security, data science, legal.
-- **Business Acumen** — financial-services fluency to make sound trade-offs.
-- **Learning Agility** — keep pace with a field that resets every few months.
