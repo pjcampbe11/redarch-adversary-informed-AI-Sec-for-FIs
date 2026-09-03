@@ -1,6 +1,6 @@
 # What to Break First — Offensive Priorities for AI Targets @ FIs
 
-The question that matters: *from a breaking-AI perspective, for a FI
+The question that matters: *From a breaking-AI perspective, for a FI
 standing up or already running GenAI offerings to ~Millions of cust' data, what do
 you attack first?* This is the offensive counterpart to the reference
 architecture — ranked by **blast radius**, not by novelty.
