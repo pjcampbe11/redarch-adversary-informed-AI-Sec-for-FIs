@@ -37,7 +37,7 @@ Not every AI system needs the same rigor. Tier by *data* and *agency*:
 | **T2 Elevated** | Touches sensitive data **or** has agency, not both | RAG Q&A over participant docs (read-only) | Threat model + entitlement/DLP controls + red-team |
 | **T1 Standard** | No sensitive data, no agency | Internal doc summariser on public content | Baseline controls + spot check |
 
-The Voya worked-example copilot is **T3** — the highest tier, which is why it is
+The fin-worked-example copilot is **T3** — the highest tier, which is why it is
 the priority target in [prioritization.md](prioritization.md).
 
 ---
