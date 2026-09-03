@@ -1,10 +1,10 @@
-# Worked example: a wealth/retirement "Advisor Copilot" of the kind a firm like
-# Voya would build on Azure OpenAI + Databricks over participant data.
+# Worked example: a wealth/retirement "Advisor Copilot" of the kind a firm
+# would build on Azure OpenAI + Databricks over participant data.
 #
 # This spec is intentionally partly-insecure so the controls policy flags gaps
 # (e.g. money-movement tool with no human-in-the-loop). Fix the fields and
 # re-run `redarch controls` to watch it go green.
-system: "Voya Advisor Copilot (worked example)"
+system: "Advisor Copilot (worked example)"
 
 components:
   - name: advisor-copilot
