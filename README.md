@@ -5,10 +5,7 @@
 > offensive finding maps directly to the control that should have stopped it.
 
 RedArch was built to model the duties of an **AI Security Architect** at a
-financial-services firm standing up a GenAI/agentic wealth-management offering.
-[Voya Financial](docs/voya-worked-example.md) is used throughout as the worked
-example, but nothing here is Voya-specific — point it at any Azure OpenAI /
-Databricks / OpenAI-compatible system.
+financial-services firm.
 
 It is deliberately opinionated in one way: **it starts from the attacker.** The
 threat model, the controls, and the priority order all fall out of what an
@@ -100,8 +97,6 @@ and setting `REDARCH_API_KEY`. The same probe suite runs unchanged.
 
 ## How the modules map to the AI Security Architect duties
 
-The job description lists six duty areas. Each maps to a module and a document.
-
 | JD duty area | RedArch module | Document |
 |---|---|---|
 | AI security **architecture & governance** (reference architectures, guardrails, governance frameworks) | `controls/`, `redarch/report` | [reference-architecture.md](docs/reference-architecture.md), [governance.md](docs/governance.md) |
@@ -139,7 +134,7 @@ redarch/
 │   ├── agent/               #   tool schemas + action broker (HITL)
 │   └── pipeline.py          #   orchestrator; `python -m azure_advisor.pipeline --demo`
 ├── infra/                   # provision.sh + main.bicep (secure-by-default estate)
-├── examples/                # Voya worked-example spec, targets, probe pack
+├── examples/                # Worked-example spec, targets, probe pack
 ├── policies/                # finserv-genai baseline policy
 ├── docs/                    # analysis + azure-advisor-architecture.md + field-guide/
 ├── tests/                   # 28 pytest tests (RedArch + azure_advisor)
